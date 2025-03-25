@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Date Validation</title>
+    <script>
+        function validateDate() {
+            var day = document.getElementById("day").value;
+            var month = document.getElementById("month").value;
+            var year = document.getElementById("year").value;
+            
+            if (day == "" || month == "" || year == "") {
+                alert("Date fields cannot be empty!");
+                return false;
+            }
+            if (year < 1900 || year > 2016 || month < 1 || month > 12 || day < 1 || day > 31) {
+                alert("Invalid date!");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit="return validateDate()">
+        <label>Date of Birth:</label>
+        <input type="text" id="day" placeholder="DD" size="2">
+        <input type="text" id="month" placeholder="MM" size="2">
+        <input type="text" id="year" placeholder="YYYY" size="4">
+        <br><br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

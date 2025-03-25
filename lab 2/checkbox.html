@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Checkbox Validation</title>
+    <script>
+        function validateCheckbox() {
+            var checkbox1 = document.getElementById("chk1");
+            var checkbox2 = document.getElementById("chk2");
+            var checkbox3 = document.getElementById("chk3");
+            
+            if (!checkbox1.checked && !checkbox2.checked && !checkbox3.checked) {
+                alert("Select at least one option!");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit="return validateCheckbox()">
+        <label>Select Interests:</label><br>
+        <input type="checkbox" id="chk1"> Option 1
+        <input type="checkbox" id="chk2"> Option 2
+        <input type="checkbox" id="chk3"> Option 3
+        <br><br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

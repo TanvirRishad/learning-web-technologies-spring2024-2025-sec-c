@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Name Validation</title>
+    <script>
+        function validateName() {
+            var name = document.getElementById("name").value;
+            if (name == "") {
+                alert("Name cannot be empty!");
+                return false;
+            }
+            var words = name.trim().split(" ");
+            if (words.length < 2) {
+                alert("Name must contain at least two words!");
+                return false;
+            }
+            if (!isNaN(name[0])) {
+                alert("Name must start with a letter!");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit="return validateName()">
+        <label>Name:</label>
+        <input type="text" id="name">
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
